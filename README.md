@@ -76,13 +76,7 @@
 
   07. Your application is running. Choose any infected image to get results.
 
-# Screenshots
-  
-  ![](screenshots/home.png "Home Page")
 
-  ![](screenshots/choose_img.png "Choose Image")
-
-  ![](screenshots/Output_img.png "Output of running manage.py")
 
 
 
