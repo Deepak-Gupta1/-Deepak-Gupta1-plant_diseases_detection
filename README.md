@@ -54,7 +54,7 @@
 
   01. Download the repository by clicking on the download button or type the following command in CMD to clone the repository:
       
-      `git clone https://github.com/Deepak-Gupta1/-Deepak-Gupta1-plant_diseases_detection`
+      `git clone https://github.com/Deepak-Gupta1/plant_diseases_detection`
 
   02. Download model from the following link and paste it in the `\plant_diseases\plant_app` folder: 
     https://drive.google.com/file/d/1FZXraDDPqbRTX-QeiQclfojgtoLddxQ_/view
