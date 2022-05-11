@@ -1,0 +1,76 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Plant Diseases</title>
+    <style>
+        body {
+          background-image: url({% static 'plant_app/images/mybg3.jpg' %});
+        }
+    </style>
+  </head>
+<body>
+    <div id='name' class="container">
+      <div class="row">
+        <div><h1 class="text-center mt-3" style="color: #1a6843;"><strong>Plant Diseases Recognition</h1></div>
+        <div class="col align-self-center">
+          <form method="post" id="fileform" class="text-center" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="file-upload">
+                <div class="file-select">
+                    <div>
+                        <label for="formFile" class="fst-italic"style="font-family: cursive;">"We can't live a healthy life on a sick planet 
+                            Because without a healthy planet there is not a healthy anything". </label>
+                   </div>
+                    <div class="row justify-content-center">
+                      <div class="col-6">
+                        <input class="form-control border-success " type="file" id="chooseFile" name="myfile">
+                      </div>
+                    </div>   
+                </div>
+            </div>
+            <div class="mt-1 mx-auto">
+                <button id="sub" type="submit" class="btn btn-success btn-lg ">Result</button>
+            </div>
+          </form>
+        </div>
+
+      {% if file_url %}
+      <div class="row justify-content-center mt-5" style="font-family: emoji;">
+        <div class="col-4">
+          <img src="data:image/png;base64,{{file_url}}" style="width:224px;height:224px;">
+        </div>
+        <div class="col-6">
+          <h1 id='filename'><strong>Item: {{ leaf }}</h1>
+          <h1 id='filename'><strong>Status : {{ diseases }}</h1> 
+        </div>
+      </div>
+      {% endif %}
+      </div>
+    </div>
+
+    
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    https://www.bing.com/images/search?view=detailV2&ccid=Ee99heRt&id=B3B309B96B703F2D1B715265355D227385DE862D&thid=OIP.Ee99heRtbgtBt7iLZ9wsOwHaEZ&mediaurl=https%3A%2F%2Fsimplemachinedesigns.com%2Fwp-content%2Fuploads%2F2019%2F03%2Fleaves-right-higher-1.png&exph=1834&expw=3087&q=leaves+related+website&simid=6080122394968
+    36080&form=IRPRST&ck=937EB546356A3A356A318C9D9FF1C315&selectedindex=3&ajaxhist=0&ajaxserp=0&vt=0
+  -->
+  </body>
+</html>
